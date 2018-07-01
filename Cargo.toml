@@ -1,0 +1,16 @@
+[package]
+name = "leetcode"
+version = "0.1.0"
+authors = ["neerajbisht1987 <bisht.neeraj@gmail.com>"]
+
+
+
+[lib]
+name = "leetCodeLib"
+path = "src/lib/lib.rs"
+
+[[bin]]
+name = "leetCodeBin"
+path = "src/bin/main.rs"
+
+[dependencies]
