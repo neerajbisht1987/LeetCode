@@ -3,10 +3,11 @@ extern crate leetCodeLib;
 
 
 fn main() {
-    leetCodeLib::two_sum::printHelloWorld();
+    leetCodeLib::print_hello_world();
     let arr=[1,2,3,4];
     let vec = create_vector(&arr);
-    println!("{:?}",vec );
+    let pair = leetCodeLib::two_sum::two_sum(&vec, 5);
+    println!("{:?}",pair );
 }
 
 
