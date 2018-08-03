@@ -1,4 +1,4 @@
-#[derive(Copy,Clone)]
+#[derive(Copy,Clone,Debug)]
 struct dist_point
 {
     dist : u32,
@@ -21,6 +21,8 @@ pub fn dijkstra_shortest_path(path :[[u32;6];6] , mut from:usize)
     {
         let mut min_val=<u32>::max_value();
         visited_num = visited_num+1;
+        println!("arr:{:?}",arr_dist_length);
+        println!("visited {:?}",isVisited);
         for (index,ref dp) in arr_dist_length.iter().enumerate()
         {
             if !isVisited[index]
@@ -32,6 +34,7 @@ pub fn dijkstra_shortest_path(path :[[u32;6];6] , mut from:usize)
             }
         }
         isVisited[from] = true;
+        println!("choosen from: {}",from );
         
         for (_node, _dis) in path[from].iter().enumerate()
         {
@@ -43,20 +46,23 @@ pub fn dijkstra_shortest_path(path :[[u32;6];6] , mut from:usize)
             {
                 continue;
             }
-            else if arr_dist_length[from].dist != <u32>::max_value() && 
-             arr_dist_length[_node].dist > *_dis +  arr_dist_length[from].dist
+            if arr_dist_length[_node].dist ==<u32>::max_value()
+            {
+                arr_dist_length[_node].dist = *_dis;
+                arr_dist_length[_node].from = from;
+            }            
+            else if arr_dist_length[_node].dist > (*_dis +  arr_dist_length[from].dist)
             {
                 arr_dist_length[_node].dist = *_dis +  arr_dist_length[from].dist;
                 arr_dist_length[_node].from = from;
             }
 
         }
-        let index=0;
-        arr_dist_length.iter_mut().for_each(|dp|
+    }
+   let i =0;
+    arr_dist_length.iter_mut().for_each(|dp|
         {
+
             println!("from: {}, distance: {}",dp.from,dp.dist );
         });
-
-
-    }
 }

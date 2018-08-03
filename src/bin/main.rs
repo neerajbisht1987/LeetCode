@@ -9,10 +9,10 @@ use leetCodeLib::dijkstra;
 fn main() {
     let path = [
         [<u32>::max_value(),5,<u32>::max_value(),3,<u32>::max_value(),<u32>::max_value()],
-        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
-        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
-        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
-        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
+        [<u32>::max_value(),<u32>::max_value(),1,<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
+        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),1],
+        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),3,<u32>::max_value()],
+        [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),5],
         [<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value(),<u32>::max_value()],
         ];
     dijkstra::dijkstra_shortest_path(path,0);
