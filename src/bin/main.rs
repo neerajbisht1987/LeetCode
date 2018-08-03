@@ -38,16 +38,16 @@ fn main() {
         // let rem_count = x_vec.borrow().len();
         // println!("x = {}, remaining = {}", x, rem_count);
 
-        let v = vec![1,2,3];
-        for val in v.iter()
-        {
-            println!("{}",val );
-        }
+    //     let v = vec![1,2,3];
+    //     for val in v.iter()
+    //     {
+    //         println!("{}",val );
+    //     }
         
-     for val in v.iter()
-        {
-            println!("{}",val );
-        }
+    //  for val in v.iter()
+    //     {
+    //         println!("{}",val );
+    //     }
 
 }
 

@@ -43,7 +43,8 @@ pub fn dijkstra_shortest_path(path :[[u32;6];6] , mut from:usize)
             {
                 continue;
             }
-            else if arr_dist_length[_node].dist > *_dis +  arr_dist_length[from].dist
+            else if arr_dist_length[from].dist != <u32>::max_value() && 
+             arr_dist_length[_node].dist > *_dis +  arr_dist_length[from].dist
             {
                 arr_dist_length[_node].dist = *_dis +  arr_dist_length[from].dist;
                 arr_dist_length[_node].from = from;
